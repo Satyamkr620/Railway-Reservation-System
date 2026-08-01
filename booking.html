@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bookings | Railway Reservation System</title>
-
+    <title>Passenger Details</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,66 +15,72 @@
     </div>
 
     <nav>
-
-        <a href="search.html">Book Ticket</a>
-
+        <a href="search.html">Search</a>
         <a href="bookings.html">My Bookings</a>
-
-        <a href="#" onclick="logout()">Logout</a>
-
+        <a href="login.html">Logout</a>
     </nav>
 
 </header>
 
-<h2 style="text-align:center; margin-top:30px;">
+<div class="container">
 
-    My Booking History
+    <h2>Passenger Details</h2>
 
-</h2>
+    <form id="bookingForm">
 
-<table id="bookingTable">
+        <input
+            type="text"
+            id="name"
+            placeholder="Passenger Name"
+            required
+        >
 
-<thead>
+        <input
+            type="number"
+            id="age"
+            placeholder="Age"
+            min="1"
+            max="120"
+            required
+        >
 
-<tr>
+        <select id="gender" required>
 
-<th>PNR</th>
+            <option value="">Select Gender</option>
 
-<th>Train No</th>
+            <option>Male</option>
 
-<th>Passenger</th>
+            <option>Female</option>
 
-<th>Class</th>
+            <option>Other</option>
 
-<th>Coach</th>
+        </select>
 
-<th>Seat</th>
+        <select id="travelClass" required>
 
-<th>Status</th>
+            <option value="">Select Class</option>
 
-<th>Action</th>
+            <option value="SL">Sleeper (SL)</option>
 
-</tr>
+            <option value="3A">AC 3 Tier (3A)</option>
 
-</thead>
+            <option value="2A">AC 2 Tier (2A)</option>
 
-<tbody>
+            <option value="1A">First AC (1A)</option>
 
-</tbody>
+        </select>
 
-</table>
+        <button type="submit">
 
-<div style="text-align:center; margin-top:30px;">
+            Continue to Payment
 
-<button onclick="window.location.href='search.html'">
+        </button>
 
-Book Another Ticket
-
-</button>
+    </form>
 
 </div>
 
-<script src="bookings.js"></script>
+<script src="booking.js"></script>
 
 </body>
 </html>

@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Bookings</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings | Railway Reservation System</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1 align="center">My Bookings</h1>
+<header>
+
+    <div class="logo">
+        🚆 Railway Reservation System
+    </div>
+
+    <nav>
+
+        <a href="search.html">Book Ticket</a>
+
+        <a href="bookings.html">My Bookings</a>
+
+        <a href="#" onclick="logout()">Logout</a>
+
+    </nav>
+
+</header>
+
+<h2 style="text-align:center; margin-top:30px;">
+
+    My Booking History
+
+</h2>
 
 <table id="bookingTable">
 
 <thead>
 
 <tr>
+
 <th>PNR</th>
-<th>Passenger</th>
+
 <th>Train No</th>
+
+<th>Passenger</th>
+
+<th>Class</th>
+
 <th>Coach</th>
+
 <th>Seat</th>
+
+<th>Status</th>
+
 <th>Action</th>
+
 </tr>
 
 </thead>
@@ -30,6 +64,16 @@
 </tbody>
 
 </table>
+
+<div style="text-align:center; margin-top:30px;">
+
+<button onclick="window.location.href='search.html'">
+
+Book Another Ticket
+
+</button>
+
+</div>
 
 <script src="bookings.js"></script>
 

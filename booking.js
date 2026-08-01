@@ -1,94 +1,49 @@
 // ===============================
 // Railway Reservation System
-// bookings.js
+// booking.js
 // ===============================
 
-// Get bookings from localStorage
-let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+const bookingForm = document.getElementById("bookingForm");
 
-const tbody = document.querySelector("#bookingTable tbody");
+bookingForm.addEventListener("submit", function (e) {
 
-// Display all bookings
-function displayBookings() {
+    e.preventDefault();
 
-    tbody.innerHTML = "";
+    const passengerName = document.getElementById("name").value.trim();
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const travelClass = document.getElementById("travelClass").value;
 
-    if (bookings.length === 0) {
+    const trainNo = localStorage.getItem("selectedTrain");
+    const seat = localStorage.getItem("selectedSeat");
 
-        tbody.innerHTML = `
-            <tr>
-                <td colspan="8">No Bookings Found</td>
-            </tr>
-        `;
-
+    if (!trainNo || !seat) {
+        alert("Please select a train and seat first.");
+        window.location.href = "search.html";
         return;
     }
 
-    bookings.forEach(function (booking, index) {
+    const coach = "S" + (Math.floor(Math.random() * 10) + 1);
 
-        tbody.innerHTML += `
+    const pnr = Math.floor(
+        1000000000 + Math.random() * 9000000000
+    ).toString();
 
-        <tr>
+    const ticket = {
 
-            <td>${booking.pnr}</td>
+        pnr: pnr,
+        trainNo: trainNo,
+        name: passengerName,
+        age: age,
+        gender: gender,
+        travelClass: travelClass,
+        coach: coach,
+        seat: seat
 
-            <td>${booking.trainNo}</td>
+    };
 
-            <td>${booking.name}</td>
+    localStorage.setItem("ticket", JSON.stringify(ticket));
 
-            <td>${booking.travelClass}</td>
+    window.location.href = "payment.html";
 
-            <td>${booking.coach}</td>
-
-            <td>${booking.seat}</td>
-
-            <td>${booking.paymentStatus}</td>
-
-            <td>
-
-                <button onclick="cancelBooking(${index})">
-
-                    Cancel
-
-                </button>
-
-            </td>
-
-        </tr>
-
-        `;
-
-    });
-
-}
-
-// Cancel booking
-function cancelBooking(index) {
-
-    if (confirm("Are you sure you want to cancel this ticket?")) {
-
-        bookings.splice(index, 1);
-
-        localStorage.setItem("bookings", JSON.stringify(bookings));
-
-        displayBookings();
-
-        alert("Ticket Cancelled Successfully!");
-
-    }
-
-}
-
-// Logout
-function logout() {
-
-    localStorage.removeItem("loggedInUser");
-
-    alert("Logged Out Successfully!");
-
-    window.location.href = "login.html";
-
-}
-
-// Load bookings on page load
-displayBookings();
+});
