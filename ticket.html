@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway E-Ticket</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🚆 Railway Reservation System
+    </div>
+
+    <nav>
+
+        <a href="search.html">Home</a>
+
+        <a href="bookings.html">My Bookings</a>
+
+        <a href="login.html">Logout</a>
+
+    </nav>
+
+</header>
+
+<div class="ticket">
+
+    <h1>Railway E-Ticket</h1>
+
+    <hr>
+
+    <p><strong>PNR:</strong> <span id="pnr"></span></p>
+
+    <p><strong>Train Number:</strong> <span id="trainNo"></span></p>
+
+    <p><strong>Passenger Name:</strong> <span id="name"></span></p>
+
+    <p><strong>Age:</strong> <span id="age"></span></p>
+
+    <p><strong>Gender:</strong> <span id="gender"></span></p>
+
+    <p><strong>Class:</strong> <span id="travelClass"></span></p>
+
+    <p><strong>Coach:</strong> <span id="coach"></span></p>
+
+    <p><strong>Seat:</strong> <span id="seat"></span></p>
+
+    <p><strong>Payment Status:</strong>
+        <span id="status"></span>
+    </p>
+
+    <p><strong>Transaction ID:</strong>
+        <span id="txn"></span>
+    </p>
+
+    <hr>
+
+    <button onclick="window.print()">
+
+        Print Ticket
+
+    </button>
+
+    <br><br>
+
+    <button onclick="window.location.href='bookings.html'">
+
+        My Bookings
+
+    </button>
+
+</div>
+
+<script src="ticket.js"></script>
+
+</body>
+</html>

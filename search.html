@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Train | Railway Reservation System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🚆 Railway Reservation System
+    </div>
+
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="bookings.html">My Bookings</a>
+        <a href="login.html">Logout</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <h2>Search Train</h2>
+
+    <input
+        type="text"
+        id="from"
+        placeholder="From Station"
+    >
+
+    <input
+        type="text"
+        id="to"
+        placeholder="To Station"
+    >
+
+    <input
+        type="date"
+        id="journeyDate"
+    >
+
+    <button onclick="searchTrain()">
+        Search Train
+    </button>
+
+</div>
+
+<table id="trainTable">
+
+<thead>
+
+<tr>
+
+<th>Train No.</th>
+
+<th>Train Name</th>
+
+<th>From</th>
+
+<th>To</th>
+
+<th>Departure</th>
+
+<th>Arrival</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+<script src="search.js"></script>
+
+</body>
+</html>

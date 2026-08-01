@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Railway Reservation System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        🚆 Railway Reservation System
+    </div>
+
+    <nav>
+        <a href="search.html">Search</a>
+        <a href="bookings.html">My Bookings</a>
+        <a href="login.html">Logout</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <h2>Payment</h2>
+
+    <h3>Total Fare: ₹<span id="fare">0</span></h3>
+
+    <form id="paymentForm">
+
+        <select id="paymentMethod" required>
+
+            <option value="">Select Payment Method</option>
+
+            <option value="UPI">UPI</option>
+
+            <option value="Debit Card">Debit Card</option>
+
+            <option value="Credit Card">Credit Card</option>
+
+            <option value="Net Banking">Net Banking</option>
+
+        </select>
+
+        <input
+            type="text"
+            id="paymentDetails"
+            placeholder="Enter UPI ID / Card Number"
+            required
+        >
+
+        <button type="submit">
+
+            Pay Now
+
+        </button>
+
+    </form>
+
+</div>
+
+<script src="payment.js"></script>
+
+</body>
+</html>
